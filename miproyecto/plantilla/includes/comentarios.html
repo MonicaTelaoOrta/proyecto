@@ -1,0 +1,8 @@
+{%extends "base.html"%}
+{%block container%}
+<form action="" method="post">
+		{{comentarios.as_ul}}
+		{% csrf_token %}
+		<input type="submit" value="Enviar">
+</form>
+{%endblock%}

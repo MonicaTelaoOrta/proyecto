@@ -1,0 +1,30 @@
+
+{%extends "base.html"%}
+<title>inicio</title> 
+{%block container%}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">logo</div>
+			<div class="col-xs-9">menu</div>
+				<ul id="comentarios">
+					{%for comentarios in item.comentario_set.all%}
+					<li>
+						<div>
+							{{comentarios.fecha}}
+							{{comentarios.email}}
+						</div>
+						<div>
+							{{comentarios.Contenido}}	
+						</div>
+					</li>
+					{%endfor%}
+				</ul>
+				</li>
+		</ul>
+	</div>
+<form action="" method="post">
+		{% csrf_token %}
+		<input type="submit" value="Enviar">
+	</form>
+{%endblock%}
+
